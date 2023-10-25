@@ -3,11 +3,13 @@ package com.example.bai7.service.Impl;
 import com.example.bai7.model.VatTu;
 import com.example.bai7.repository.VatTuRepository;
 import com.example.bai7.service.VatTuService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VatTuServiceImpl implements VatTuService {
@@ -22,14 +24,14 @@ public class VatTuServiceImpl implements VatTuService {
 
     @Override
     public List<String> hienthi() {
-        List<VatTu> danhsachVattu=vatTuRepository.findAll();
-        List<String>danhsach=new ArrayList<>();
-        for(VatTu vt: danhsachVattu){
+        List<VatTu> danhsachVattu = vatTuRepository.findAll();
+        List<String> danhsach = new ArrayList<>();
+        for (VatTu vt : danhsachVattu) {
             String dong;
-            if(vt.getSoLuongTon()==0){
-                dong= "Vat tu["+ vt.getTenVatTu() +"]: SLTK: Hết hàng";
-            }else {
-                dong= "Vat tu["+ vt.getTenVatTu() +"]: SLTK"+ vt.getSoLuongTon();
+            if (vt.getSoLuongTon() == 0) {
+                dong = "Vat tu[" + vt.getTenVatTu() + "]: SLTK: Hết hàng";
+            } else {
+                dong = "Vat tu[" + vt.getTenVatTu() + "]: SLTK" + vt.getSoLuongTon();
             }
 
             danhsach.add(dong);
@@ -50,5 +52,7 @@ public class VatTuServiceImpl implements VatTuService {
             vatTu.setSoLuongTon(soluongmoi);
             vatTuRepository.save(vatTu);
         }
+
+
     }
 }

@@ -17,7 +17,7 @@ public class ChiTietPhieuNhap {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ChiTietPhieuNhapId")
     private int id;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="VatTuId")
     private VatTu VatTu;
     @ManyToOne

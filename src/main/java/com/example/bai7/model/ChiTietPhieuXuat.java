@@ -22,7 +22,7 @@ public class ChiTietPhieuXuat {
     private VatTu VatTu;
     @ManyToOne
     @JoinColumn(name="PhieuXuatId")
-    private PhieuNhap PhieuXuatId;
+    private PhieuXuat PhieuXuatId;
     @Column(name="SoLuongXuat")
     private int SoLuongXuat;
 }

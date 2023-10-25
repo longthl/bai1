@@ -18,8 +18,8 @@ public class ChiTietPhieuNhapServiceImpl implements ChiTietPhieuNhapService {
     @Override
     public void insert(ChiTietPhieuNhap chiTietPhieuNhap) {
         chiTietPhieuNhapRepo.save(chiTietPhieuNhap);
-        int vatTu=chiTietPhieuNhap.getVatTu().getId();
-        int soLuongNhap=chiTietPhieuNhap.getSoLuongNhap();
-        vatTuService.capnhat(vatTu,soLuongNhap);
+//        int vatTu=chiTietPhieuNhap.getVatTu().getId();
+//        int soLuongNhap=chiTietPhieuNhap.getSoLuongNhap();
+//        vatTuService.capnhat(vatTu,soLuongNhap);
     }
 }

@@ -19,8 +19,8 @@ public class ChiTietPhieuXuatServiceImpl implements ChiTietPhieuXuatService {
     @Override
     public void insert(ChiTietPhieuXuat chiTietPhieuXuat) {
         chiTietPhieuXuatRepo.save(chiTietPhieuXuat);
-        int vatTu=chiTietPhieuXuat.getVatTu().getId();
-        int soLuongXuat=chiTietPhieuXuat.getSoLuongXuat();
-        vatTuService.capnhat(vatTu,-soLuongXuat);
+//        int vatTu=chiTietPhieuXuat.getVatTu().getId();
+//        int soLuongXuat=chiTietPhieuXuat.getSoLuongXuat();
+//        vatTuService.capnhat(vatTu,-soLuongXuat);
     }
 }
